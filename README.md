@@ -15,7 +15,7 @@ Dependencies:
 Installation Guide:
 
 ```
-git clone https://github.com/yourusername/newtons-simulator.git
+git clone https://github.com/myleskoppelman/Newtons_Simulator.git
 ```
 
 

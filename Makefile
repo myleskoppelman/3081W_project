@@ -1,15 +1,17 @@
-CXX = g++
+CXX = clang++
 
-CXXFLAGS = -std=c++17 -Iinclude -I/opt/homebrew/include -DGL_SILENCE_DEPRECATION
+# Add OpenGL, GLFW, and GLEW flags to CXXFLAGS and LDFLAGS
+CXXFLAGS = -std=c++17 -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -Ilibs -DGL_SILENCE_DEPRECATION
 
-LDFLAGS = -L/opt/homebrew/lib -lglfw -framework OpenGL
+LDFLAGS = -L/opt/homebrew/lib -lglew -lglfw -framework OpenGL
 
-TARGET = app
+TARGET = newtons_simulator
 
 SRC = $(wildcard src/*.cpp)
 
 OBJ = $(SRC:.cpp=.o)
 
+# Default target to build the program
 all: $(TARGET)
 
 $(TARGET): $(OBJ)
